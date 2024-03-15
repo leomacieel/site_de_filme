@@ -1,0 +1,82 @@
+@use 'variaveis';
+
+.actors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: variaveis.$corDeFundoSecundaria;
+    padding: 20px 50px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    @media (max-width: 1024px) {
+        display: block;
+        padding: 0;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    
+
+    h2 {
+        flex: 1;
+        text-align: center;
+        font-size: 50px;
+
+        @media (max-width: 768px) {
+            font-size: 30px;
+        }
+
+    }
+
+    &__list {
+        display: grid;
+        flex: 1;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        left: 1;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+
+        &__item {
+            margin-left: 10px;
+            gap: 10px;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                margin: 10px 0;
+            }
+
+            a {
+                font-weight: bold;
+                margin-bottom: 2px;
+                text-decoration: none;
+                color: variaveis.$corParaTextoEscuro;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: variaveis.$corParaHover;
+                }
+            }
+
+            img {
+                width: 200px;
+                height: 200px;
+                border-radius: 10px;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    height: auto;
+                }
+
+                @media (max-width: 1024px) {
+                    width: 180px;
+                    height: 180px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@use 'variaveis';
+
+.sinopse {
+    display: flex;
+    background-color: variaveis.$corDeFundoSecundaria;
+
+    &__image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 500px;
+            height: auto;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &__text {
+        flex: 1;
+        padding-left: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 45px 100px;
+
+        h2 {
+            margin-left: 2px;
+            margin-top: 20px;
+
+            @media (max-width: 768px) {
+                font-size: 10px;
+            }
+        }
+
+        p {
+            margin-top: 20px;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            padding-left: 0;
+            margin: 20px 0;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        padding: 20px;
+
+        &__image {
+            order: -1;
+        }
+
+        &__text {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-left: 0;
+            margin: 20px 0;
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+    }
+}
